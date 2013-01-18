@@ -1,0 +1,8 @@
+SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS6.0.sdk
+
+export SDKROOT
+
+mkdir -p ~/llvm/device
+mkdir -p ~/llvm/sym/device
+
+~/llvm/build_llvm armv7 armv7 ~/llvm/llvm-3.2.src / ~/llvm/device ~/llvm/sym/device yes no yes no

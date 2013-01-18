@@ -1,0 +1,8 @@
+SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.0.sdk
+
+export SDKROOT
+
+mkdir -p ~/llvm/simulator
+mkdir -p ~/llvm/sym/simulator
+
+~/llvm/build_llvm i386 i386 ~/llvm/llvm-3.2.src / ~/llvm/simulator ~/llvm/sym/simulator yes no no yes 3 2
