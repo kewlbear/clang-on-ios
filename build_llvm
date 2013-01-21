@@ -67,7 +67,7 @@ if [ "$ARM_HOSTED_BUILD" = yes ]; then
 elif [ "$IOS_SIM_BUILD" = yes ]; then
     DARWIN_VERS=_sim
     CPU=i686
-    DRIVERS=clang clang++
+    DRIVERS="clang clang++"
 fi
 echo DARWIN_VERS = $DARWIN_VERS
 
