@@ -63,7 +63,7 @@ DARWIN_VERS=`uname -r | sed 's/\..*//'`
 if [ "$ARM_HOSTED_BUILD" = yes ]; then
     DARWIN_VERS=10
     CPU=arm
-    DRIVERS=llvm-gcc llvm-g++
+    DRIVERS="llvm-gcc llvm-g++"
 elif [ "$IOS_SIM_BUILD" = yes ]; then
     DARWIN_VERS=_sim
     CPU=i686
@@ -107,7 +107,7 @@ if [ "$ARM_HOSTED_BUILD" = yes -o "$IOS_SIM_BUILD" = yes ]; then
     P=$DIR/bin/$CPU-apple-darwin$DARWIN_VERS-${prog}
     T=`xcrun -sdk $SDKROOT -find ${prog}`
     echo '#!/bin/sh' > $P || exit 1
-    echo 'exec '$T' -arch $HOSTS -isysroot '${SDKROOT}' "$@"' >> $P || exit 1
+    echo 'exec '$T' -arch '$HOSTS' -isysroot '${SDKROOT}' "$@"' >> $P || exit 1
     chmod a+x $P || exit 1
   done
 
